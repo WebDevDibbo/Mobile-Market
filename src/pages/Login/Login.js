@@ -26,9 +26,9 @@ const Login = () => {
           <input type="submit" className="btn btn-accent w-full text-white mt-5" value='login'/>
           
         </form>
-        <p className="my-4">New to Doctors Portal? <Link to='/signup' className="text-secondary">Create new account</Link></p>
+        <p className="my-4">New to Mobile Market? <Link to='/signup' className="text-primary">Create new account</Link></p>
         <div className="text-center mb-4 divider">OR</div>
-        <input  type="submit" className="btn btn-outline mb-6 w-full" value='CONTINUE WITH GOOGLE'/>
+        <input  type="submit" className="btn btn-outline btn-success mb-6 w-full" value='CONTINUE WITH GOOGLE'/>
       </div>
     </div>
         </div>
