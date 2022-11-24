@@ -34,7 +34,7 @@ const Register = () => {
 
           <input
             type="submit"
-            className="btn btn-primary w-full text-white mt-5"
+            className="btn btn-outline btn-primary w-full text-white mt-5"
             value="signup"
           />
           <div>
