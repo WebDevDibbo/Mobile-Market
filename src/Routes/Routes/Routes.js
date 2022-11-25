@@ -1,3 +1,4 @@
+import Blog from "../../pages/Blogs/Blog";
 import Login from "../../pages/Login/Login";
 import Register from "../../pages/Register/Register";
 
@@ -22,6 +23,10 @@ const {default:Home}  =require("../../pages/Home/Home/Home");
             {
                 path:'/signup',
                 element:<Register></Register>
+            },
+            {
+                path:'/blog',
+                element:<Blog></Blog>
             }
         ]
     }
