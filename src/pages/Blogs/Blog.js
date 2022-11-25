@@ -3,7 +3,7 @@ import React from "react";
 const Blog = () => {
   return (
     <div>
-      <div className="pl-8 py-8 rounded-lg shodow-2xl border border-gray-300">
+      <div className="pl-8 py-8 rounded-lg mb-2 shodow-2xl border border-gray-300">
         <h2 className="text-2xl">
           1. What are the different ways to manage a state in a React
           application?
@@ -93,7 +93,7 @@ const Blog = () => {
           you build.
         </p>
       </div>
-      <div className="pl-8 pb-8 rounded-lg shodow-2xl border border-gray-300">
+      <div className="pl-8 pb-8 rounded-lg mb-2 shodow-2xl border border-gray-300">
         <h2 className="text-2xl py-2">
           2.  How does prototypical inheritance work?
         </h2>
@@ -112,7 +112,7 @@ const Blog = () => {
         </p>
         <p>The Prototypal Inheritance is a feature in javascript used to add methods and properties in objects. It is a method by which an object can inherit the properties and methods of another object. Traditionally, in order to get and set the [[Prototype]] of an object, we use Object.getPrototypeOf and Object.setPrototypeOf. Nowadays, in modern language, it is being set using __proto__.</p>
       </div>
-      <div className="pl-8 pb-8 rounded-lg shodow-2xl border border-gray-300">
+      <div className="pl-8 pb-8 rounded-lg mb-2 shodow-2xl border border-gray-300">
         <h2 className="text-2xl py-2">
           3. What is a unit test? Why should we write unit tests?
         </h2>

@@ -2,17 +2,25 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Register = () => {
+  const handleSignUp = event => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(name, email, password);
+  }
     return (
         <div>
             <div className="h-[800px] flex justify-center items-center bg-gray-200">
       <div className="w-96 px-7 rounded-lg shadow-2xl ">
         <h2 className="text-xl text-center my-6">Sign Up</h2>
-        <form >
+        <form onSubmit={handleSignUp} >
           <div className="form-control w-full max-w-xs">
             <label className="label">
               <span className="label-text">Name</span>
             </label>
-            <input type="text"   className="input input-bordered" />
+            <input type="text" name='name'   className="input input-bordered" />
             
 
           </div>
@@ -20,7 +28,7 @@ const Register = () => {
             <label className="label">
               <span className="label-text">Email</span>
             </label>
-            <input type="email"  className="input input-bordered" />
+            <input type="email" name='email'  className="input input-bordered" />
             
 
           </div>
@@ -28,7 +36,7 @@ const Register = () => {
             <label className="label">
               <span className="label-text">Password</span>
             </label>
-            <input type="password"className="input input-bordered" />
+            <input type="password" name='password' className="input input-bordered" />
             
           </div>
 
