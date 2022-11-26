@@ -1,4 +1,7 @@
+import DashBoardLayout from "../../Layout/DashBoardLayout";
 import Blog from "../../pages/Blogs/Blog";
+import Dashboard from "../../pages/Dashboard/Dashboard";
+import Category from "../../pages/Home/Categories/Category";
 import Login from "../../pages/Login/Login";
 import Register from "../../pages/Register/Register";
 
@@ -27,8 +30,24 @@ const {default:Home}  =require("../../pages/Home/Home/Home");
             {
                 path:'/blog',
                 element:<Blog></Blog>
-            }
+            },
+            {
+                path:'/categories/:id',
+                loader:({params}) => fetch(`http://localhost:5000/categories/${params.id}`),
+                element:<Category></Category>
+            },
+            
         ]
+    },
+    {
+       path:'/dashboard',
+       element:<DashBoardLayout></DashBoardLayout>,
+       children:[
+        {
+            path:'/dashboard',
+            element:<Dashboard></Dashboard>
+        }
+       ]
     }
 ])
 export default router;

@@ -1,7 +1,22 @@
-import React from 'react';
+import { GoogleAuthProvider } from 'firebase/auth';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Context/AuthProvider';
 
 const Register = () => {
+  const {user,createUser,googleLogin}  = useContext(AuthContext);
+  const googleProvider = new GoogleAuthProvider();
+
+  const handleGoogleSignUp = () =>{
+    googleLogin(googleProvider)
+    .then(result => {const user = result.user 
+    console.log(user)
+    })
+    .catch(err => {console.log(err)});
+  }
+
+
+
   const handleSignUp = event => {
     event.preventDefault();
     const form = event.target;
@@ -9,6 +24,13 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
     console.log(name, email, password);
+    createUser(email,password)
+    .then(result =>{
+      const user = result.user;
+      console.log(user) ;
+      form.reset();
+    })
+    .catch(err => console.error(err));
   }
     return (
         <div>
@@ -39,7 +61,12 @@ const Register = () => {
             <input type="password" name='password' className="input input-bordered" />
             
           </div>
-
+          <div className='mt-4'>
+            Role : <select className='border border-black' name="role" id="role">
+              <option value="">Seller</option>
+              <option value="">Buyer</option>
+            </select>
+          </div>
           <input
             type="submit"
             className="btn btn-outline btn-primary w-full text-white mt-5"
@@ -57,7 +84,7 @@ const Register = () => {
         </p>
         <div className="text-center mb-4 divider">OR</div>
         <input
-          type="submit"
+          type="submit" onClick={handleGoogleSignUp}
           className="btn btn-outline btn-success mb-6 w-full"
           value="CONTINUE WITH GOOGLE"
         />

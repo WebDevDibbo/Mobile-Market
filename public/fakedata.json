@@ -1,14 +1,102 @@
+
 [
     {
-        "name" : "Iphone",
-        "img" : "https://i.ibb.co/hgPFJTm/iphone.jpg"
+        "categoryName" : "Iphone",
+        "name" : "Iphone 11 Pro Max",
+        "image" : "https://i.ibb.co/xmNWJK1/iphon11-1.jpg",
+        "location": "Dhaka",
+        "Resale Price" : "700",
+        "Original Price" : "1000",
+        "used" : "2 years",
+        "postDate" : "24 November 2022",
+        "SellersName" : "Tufan"
     },
     {
-        "name" : "Samsung",
-        "img" : "https://i.ibb.co/mD3dVwh/samsungs-1.jpg"
+        "categoryName" : "Iphone",
+        "name" : "Iphone 12 Pro Max",
+        "image" : "https://i.ibb.co/cLmTnsd/iphone12.jpg",
+        "location": "Rajshahi",
+        "Resale Price" : "900",
+        "Original Price" : "1300",
+        "used" : "2 years",
+        "postDate" : "25 November 2022",
+        "SellersName" : "Rafsan"
     },
     {
-        "name" : "Vivo",
-        "img":"https://i.ibb.co/cvgLQ3b/vi-1.png"
+        "categoryName" : "Iphone",
+        "name" : "Iphone 13 Pro Max",
+        "image" : "https://i.ibb.co/6RDSV8z/iphone13.jpg",
+        "location": "Khulna",
+        "Resale Price" : "1100",
+        "Original Price" : "1700",
+        "used" : "2 years",
+        "postDate" : "22 November 2022",
+        "SellersName" : "Josef"
+    },
+    {
+        "categoryName" : "Samsung",
+        "name" : "Samsung-Galaxy-S21-Ultra",
+        "image" : "https://i.ibb.co/Srd8yMF/Samsung-Galaxy-S21-Ultra-image.jpg",
+        "location": "Chittagong",
+        "Resale Price" : "1400",
+        "Original Price" : "2000",
+        "used" : "2 years",
+        "postDate" : "21 November 2022",
+        "SellersName" : "Jerin"
+    },
+    {
+        "categoryName" : "Samsung",
+        "name" : "Samsung-Galaxy-S20-Ultra",
+        "image" : "https://i.ibb.co/yVYDx8x/samsung-galaxy-s20-ultra-10-1.jpg",
+        "location": "Barishal",
+        "Resale Price" : "1200",
+        "Original Price" : "1700",
+        "used" : "2 years",
+        "postDate" : "20 November 2022",
+        "SellersName" : "Nadan"
+    },
+    {
+        "categoryName" : "Samsung",
+        "name" : "Samsung-Galaxy-Note20-Ultra",
+        "image" : "https://i.ibb.co/Rg4qzsW/note20-1.jpg",
+        "location": "khustia",
+        "Resale Price" : "1000",
+        "Original Price" : "1500",
+        "used" : "2 years",
+        "postDate" : "18 November 2022",
+        "SellersName" : "Shaan"
+    },
+    {
+        "categoryName" : "Vivo",
+        "name" : "Vivo x70 Pro",
+        "image" : "https://i.ibb.co/yFV9M8H/Vivo-X70-Pro-1.jpg",
+        "location": "Chittagong",
+        "Resale Price" : "900",
+        "Original Price" : "1200",
+        "used" : "1 years",
+        "postDate" : "14 November 2022",
+        "SellersName" : "Shami"
+    },
+    {
+        "categoryName" : "Vivo",
+        "name" : "Vivo v23e",
+        "image" : "https://i.ibb.co/TkhN7yL/vivov23e.jpg",
+        "location": "Chittagong",
+        "Resale Price" : "300",
+        "Original Price" : "500",
+        "used" : "1 years",
+        "postDate" : "16 November 2022",
+        "SellersName" : "Jibon"
+    },
+    {
+        "categoryName" : "Vivo",
+        "name" : "Vivo v23",
+        "image" : "https://i.ibb.co/5xhKYPN/vivov23.png",
+        "location": "Jhalokati ",
+        "Resale Price" : "200",
+        "Original Price" : "400",
+        "used" : "1 years",
+        "postDate" : "17 November 2022",
+        "SellersName" : "Rajon"
     }
 ]
