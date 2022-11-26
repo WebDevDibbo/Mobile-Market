@@ -21,6 +21,7 @@ const PhonesCollection = () => {
         { service && 
         <BookModal
         service = {service}
+        setService = {setService}
         ></BookModal>}
         </section>
     );

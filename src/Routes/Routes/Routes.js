@@ -32,11 +32,11 @@ const {default:Home}  =require("../../pages/Home/Home/Home");
                 path:'/blog',
                 element:<Blog></Blog>
             },
-            {
-                path:'/categories/:id',
-                loader:({params}) => fetch(`http://localhost:5000/categories/${params.id}`),
-                element:<Category></Category>
-            },
+            // {
+            //     path:'/categories/:id',
+            //     loader:({params}) => fetch(`http://localhost:5000/categories/${params.id}`),
+            //     element:<Category></Category>
+            // },
             {
                 path:'/products/:name',
                 loader:({params} )=> fetch(`http://localhost:5000/products/${params.name}`),

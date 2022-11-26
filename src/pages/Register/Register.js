@@ -32,13 +32,15 @@ const Register = () => {
       console.log(user) ;
       form.reset();
       toast.success('User Created Successfully');
-      navigate('/')
+     
       const userInfo = {
         displayName : name
       }
       
       updateUser(userInfo)
-      .then(res =>{})
+      .then(res =>{
+        navigate('/')
+      })
       .catch(err => console.log(err))
     })
     .catch(err => console.error(err));
