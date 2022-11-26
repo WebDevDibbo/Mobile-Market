@@ -13,6 +13,7 @@ const Login = () => {
     .then(result => {
       const user = result.user;
       console.log(user)
+    
     })
     .catch(err => console.error(err))
   } 
@@ -27,7 +28,8 @@ const Login = () => {
     logIn(email,password)
     .then(result => {
       const user = result.user;
-      console.log(user)
+      console.log(user);
+      form.reset();
     })
     .catch(err => console.error(err))
   }

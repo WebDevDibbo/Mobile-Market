@@ -1,13 +1,10 @@
-// import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import PhonesCollection from './PhonesCollection';
+
 
 const Category = ({category}) => {
     const {name,img,_id} = category;
-    
- 
-    
+   
    
     return (
         <div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Mobiles = ({phones}) => {
+const Mobiles = ({phones,setService}) => {
     const {name,image,location,ResalePrice,OriginalPrice,used,postDate,SellersName} = phones;
     return (
         <div>
@@ -16,7 +16,7 @@ const Mobiles = ({phones}) => {
               <p>Post Date : {postDate}</p>
               <p>Seller's Name : {SellersName}</p>
               <div className="card-actions justify-end">
-                <Link to=''><button className="btn btn-outline btn-info rounded-lg px-4">Book Now</button></Link>
+                 <label htmlFor="booking-modal" onClick={()=>setService(phones)} className="btn btn-outline btn-info rounded-lg px-4">Book Now</label>
               </div>
             </div>
           </div>

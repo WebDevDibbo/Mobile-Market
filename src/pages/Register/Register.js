@@ -1,11 +1,13 @@
 import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import toast from 'react-hot-toast';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 
 const Register = () => {
-  const {user,createUser,googleLogin}  = useContext(AuthContext);
+  const {createUser,googleLogin,updateUser}  = useContext(AuthContext);
   const googleProvider = new GoogleAuthProvider();
+  const navigate = useNavigate();
 
   const handleGoogleSignUp = () =>{
     googleLogin(googleProvider)
@@ -29,6 +31,15 @@ const Register = () => {
       const user = result.user;
       console.log(user) ;
       form.reset();
+      toast.success('User Created Successfully');
+      navigate('/')
+      const userInfo = {
+        displayName : name
+      }
+      
+      updateUser(userInfo)
+      .then(res =>{})
+      .catch(err => console.log(err))
     })
     .catch(err => console.error(err));
   }
@@ -42,7 +53,7 @@ const Register = () => {
             <label className="label">
               <span className="label-text">Name</span>
             </label>
-            <input type="text" name='name'   className="input input-bordered" />
+            <input type="text" name='name' required  className="input input-bordered" />
             
 
           </div>
@@ -50,7 +61,7 @@ const Register = () => {
             <label className="label">
               <span className="label-text">Email</span>
             </label>
-            <input type="email" name='email'  className="input input-bordered" />
+            <input type="email" name='email' required className="input input-bordered" />
             
 
           </div>
@@ -58,15 +69,13 @@ const Register = () => {
             <label className="label">
               <span className="label-text">Password</span>
             </label>
-            <input type="password" name='password' className="input input-bordered" />
+            <input type="password" name='password' required className="input input-bordered" />
             
           </div>
-          <div className='mt-4'>
-            Role : <select className='border border-black' name="role" id="role">
-              <option value="">Seller</option>
-              <option value="">Buyer</option>
-            </select>
-          </div>
+          <select  className="select select-bordered mt-4 w-full max-w-xs">
+              <option>Seller</option>
+              <option>Buyer</option>
+         </select>
           <input
             type="submit"
             className="btn btn-outline btn-primary w-full text-white mt-5"
@@ -77,7 +86,7 @@ const Register = () => {
           </div>
         </form>
         <p className="my-4">
-          Already have an Account??{" "}
+          Already have an Account?{" "}
           <Link to="/login" className="text-secondary">
             Please Login
           </Link>
