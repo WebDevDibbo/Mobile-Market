@@ -22,9 +22,14 @@ const Navbar = () => {
           <li>
             <Link to="/appointment">Categories</Link>
           </li>
-          <li>
-            <Link to="/contact">Contact Us</Link>
+          {
+            user?.uid ? 
+            <li>
+            <Link to="/dashboard">Dashboard</Link>
           </li>
+          :
+          <></>
+          }
           
         </React.Fragment>
       );

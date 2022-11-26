@@ -2,6 +2,7 @@ import DashBoardLayout from "../../Layout/DashBoardLayout";
 import Blog from "../../pages/Blogs/Blog";
 import Dashboard from "../../pages/Dashboard/Dashboard";
 import Category from "../../pages/Home/Categories/Category";
+import PhonesCollection from "../../pages/Home/Categories/PhonesCollection";
 import Login from "../../pages/Login/Login";
 import Register from "../../pages/Register/Register";
 
@@ -36,6 +37,12 @@ const {default:Home}  =require("../../pages/Home/Home/Home");
                 loader:({params}) => fetch(`http://localhost:5000/categories/${params.id}`),
                 element:<Category></Category>
             },
+            {
+                path:'/products/:name',
+                loader:({params} )=> fetch(`http://localhost:5000/products/${params.name}`),
+                element:<PhonesCollection></PhonesCollection>
+
+            }
             
         ]
     },
