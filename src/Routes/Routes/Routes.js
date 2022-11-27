@@ -1,6 +1,7 @@
 import DashBoardLayout from "../../Layout/DashBoardLayout";
 import Blog from "../../pages/Blogs/Blog";
 import Dashboard from "../../pages/Dashboard/Dashboard";
+import MyOrders from "../../pages/Dashboard/MyOrders";
 import Category from "../../pages/Home/Categories/Category";
 import PhonesCollection from "../../pages/Home/Categories/PhonesCollection";
 import Login from "../../pages/Login/Login";
@@ -52,7 +53,7 @@ const {default:Home}  =require("../../pages/Home/Home/Home");
        children:[
         {
             path:'/dashboard',
-            element:<Dashboard></Dashboard>
+            element:<MyOrders></MyOrders>
         }
        ]
     }

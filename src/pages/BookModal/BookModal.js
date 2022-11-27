@@ -52,7 +52,7 @@ const BookModal = ({service,setService}) => {
              <input type="text" name='mobileName'  disabled  defaultValue = {name} className="input input-bordered " />
              <input type="text" name='buyersName' disabled defaultValue={user?.displayName} className="input input-bordered " />
              <input type="text" name='email' disabled defaultValue = {user?.email} className="input input-bordered " />
-             <input type="text" name='price' disabled defaultValue = {ResalePrice} className="input input-bordered " />
+             <input type="text" name='price' disabled value = {ResalePrice} className="input input-bordered " />
              <input type="text" name='phone' placeholder='your phone number' className="input input-bordered " />
              <input type="text" name ='location'placeholder = 'location' className="input input-bordered " />
              <input type="Submit" value='Submit' className=' btn btn-accent' />
