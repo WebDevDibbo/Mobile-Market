@@ -5,7 +5,9 @@ import MyOrders from "../../pages/Dashboard/MyOrders";
 import Category from "../../pages/Home/Categories/Category";
 import PhonesCollection from "../../pages/Home/Categories/PhonesCollection";
 import Login from "../../pages/Login/Login";
+import Payment from "../../pages/Payment/Payment";
 import Register from "../../pages/Register/Register";
+import DisplayError from "../../pages/shared/DisplayError/DisplayError";
 
 const { createBrowserRouter } = require("react-router-dom");
 const { default: Main } = require("../../Layout/Main");
@@ -16,6 +18,7 @@ const {default:Home}  =require("../../pages/Home/Home/Home");
     {
         path:'/',
         element: <Main></Main>,
+        errorElement:<DisplayError></DisplayError>,
         children:[
             {
                 path:'/',
@@ -50,10 +53,16 @@ const {default:Home}  =require("../../pages/Home/Home/Home");
     {
        path:'/dashboard',
        element:<DashBoardLayout></DashBoardLayout>,
+       errorElement:<DisplayError></DisplayError>,
        children:[
         {
             path:'/dashboard',
             element:<MyOrders></MyOrders>
+        },
+        {
+            path:'/dashboard/payment/:id',
+            loader:({params}) => fetch(`http://localhost:5000/bookings/${params.id}`),
+            element:<Payment></Payment>
         }
        ]
     }
