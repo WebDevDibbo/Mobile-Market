@@ -1,12 +1,27 @@
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import CheckoutForm from './CheckoutForm';
 
 const Payment = () => {
-    const data = useLoaderData();
-    console.log("booking",data)
+    const booking = useLoaderData();
+    const {Mobile,price} = booking;
+
+    const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PK );
+    console.log(stripePromise)
+
+    
     return (
         <div>
-            <h2 className='text-3xl mb-4'>Payment</h2>
+            <h2 className='text-3xl mb-4'>Please Pay for {Mobile}</h2><p className="text-xl">
+        Please pay <strong>${price}</strong> for your product.
+      </p>
+      <div className='w-96 mt-8'>
+      <Elements stripe={stripePromise}>
+      <CheckoutForm booking = {booking}/>
+    </Elements>
+      </div>
         </div>
     );
 };

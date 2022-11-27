@@ -5,7 +5,7 @@ const Mobiles = ({phones,setService}) => {
     const {name,image,location,ResalePrice,OriginalPrice,used,postDate,SellersName} = phones;
     return (
         <div>
-            <div className="card card-compact w-96 mx-auto shadow-xl rounded-lg border border-gray-300">
+            <div className="card card-compact w-96 mx-auto mb-10 shadow-xl rounded-lg border border-gray-300">
             <figure><img className='rounded-lg' src={image} alt="Shoes" /></figure>
             <div className="card-body">
               <h2 className="card-title">Name : {name}</h2>
