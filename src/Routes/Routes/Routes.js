@@ -1,5 +1,6 @@
 import DashBoardLayout from "../../Layout/DashBoardLayout";
 import Blog from "../../pages/Blogs/Blog";
+import AddProduct from "../../pages/Dashboard/AddProduct/AddProduct";
 import Dashboard from "../../pages/Dashboard/Dashboard";
 import MyOrders from "../../pages/Dashboard/MyOrders";
 import Category from "../../pages/Home/Categories/Category";
@@ -63,6 +64,14 @@ const {default:Home}  =require("../../pages/Home/Home/Home");
             path:'/dashboard/payment/:id',
             loader:({params}) => fetch(`http://localhost:5000/bookings/${params.id}`),
             element:<Payment></Payment>
+        },
+        {
+            path:'/dashboard/adddoctor',
+            element:<AddProduct></AddProduct>
+        },
+        {
+            path:'/dashboard/myproducts',
+            element:<AddProduct></AddProduct>
         }
        ]
     }

@@ -23,7 +23,7 @@ const MyOrders = () => {
     <thead>
       <tr>
         <th></th>
-        <th>Avatar</th>
+        <th>Name</th>
         <th>Mobile</th>
        <th>Price</th>
       </tr>
@@ -37,9 +37,9 @@ const MyOrders = () => {
         <td>
           <div className="flex items-center space-x-3">
             <div className="avatar">
-              <div className="mask mask-squircle w-12 h-12">
+              {/* <div className="mask mask-squircle w-12 h-12">
                 <img src="/tailwind-css-component-profile-2@56w.png" alt="Avatar Tailwind CSS Component" />
-              </div>
+              </div> */}
             </div>
             <div>
               <div className="font-bold">{booking.Buyers}</div>
@@ -53,7 +53,7 @@ const MyOrders = () => {
         <td>${booking.price}</td>
         <td>
           {booking.price && !booking.paid &&  <Link to = {`/dashboard/payment/${booking._id}`}><button className="btn btn-primary btn-sm ">Pay</button></Link>}
-          {booking.price && booking.paid && <span className="btn btn-primary ">Paid</span>}
+          {booking.price && booking.paid && <span className="text-green-500 ">Paid</span>}
         </td>
       </tr>
            
