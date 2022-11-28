@@ -3,12 +3,14 @@ import Blog from "../../pages/Blogs/Blog";
 import AddProduct from "../../pages/Dashboard/AddProduct/AddProduct";
 import Dashboard from "../../pages/Dashboard/Dashboard";
 import MyOrders from "../../pages/Dashboard/MyOrders";
+import MyProducts from "../../pages/Dashboard/MyProducts/MyProducts";
 import Category from "../../pages/Home/Categories/Category";
 import PhonesCollection from "../../pages/Home/Categories/PhonesCollection";
 import Login from "../../pages/Login/Login";
 import Payment from "../../pages/Payment/Payment";
 import Register from "../../pages/Register/Register";
 import DisplayError from "../../pages/shared/DisplayError/DisplayError";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 const { createBrowserRouter } = require("react-router-dom");
 const { default: Main } = require("../../Layout/Main");
@@ -45,7 +47,7 @@ const {default:Home}  =require("../../pages/Home/Home/Home");
             {
                 path:'/products/:name',
                 loader:({params} )=> fetch(`http://localhost:5000/products/${params.name}`),
-                element:<PhonesCollection></PhonesCollection>
+                element:<PrivateRoute><PhonesCollection></PhonesCollection></PrivateRoute>
 
             }
             
@@ -71,7 +73,7 @@ const {default:Home}  =require("../../pages/Home/Home/Home");
         },
         {
             path:'/dashboard/myproducts',
-            element:<AddProduct></AddProduct>
+            element:<MyProducts></MyProducts>
         }
        ]
     }

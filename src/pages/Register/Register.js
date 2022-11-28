@@ -25,7 +25,8 @@ const Register = () => {
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(name, email, password);
+    const role = form.role.value;
+    console.log(name, email, password,role);
     createUser(email,password)
     .then(result =>{
       const user = result.user;
@@ -36,7 +37,6 @@ const Register = () => {
       const userInfo = {
         displayName : name
       }
-      
       updateUser(userInfo)
       .then(res =>{
         navigate('/')
@@ -56,8 +56,7 @@ const Register = () => {
               <span className="label-text">Name</span>
             </label>
             <input type="text" name='name' required  className="input input-bordered" />
-            
-
+           
           </div>
           <div className="form-control w-full max-w-xs">
             <label className="label">
@@ -65,7 +64,6 @@ const Register = () => {
             </label>
             <input type="email" name='email' required className="input input-bordered" />
             
-
           </div>
           <div className="form-control w-full max-w-xs">
             <label className="label">
@@ -74,7 +72,7 @@ const Register = () => {
             <input type="password" name='password' required className="input input-bordered" />
             
           </div>
-          <select  className="select select-bordered mt-4 w-full max-w-xs">
+          <select name='role'  className="select select-bordered mt-4 w-full max-w-xs">
               <option>Seller</option>
               <option>Buyer</option>
          </select>

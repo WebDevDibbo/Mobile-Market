@@ -68,6 +68,19 @@ const Navbar = () => {
     <div className="navbar-center hidden lg:flex">
       <ul className="menu menu-horizontal">{menuItems}</ul>
     </div>
+    
+    <div className="navbar-end">
+    {
+      user?.uid ?
+      <Link onClick={handleLogOut} ><button className="btn btn-outline btn-success px-5 rounded-md">LogOut</button></Link>
+
+      :
+
+     <>
+      <Link to='/login'><button className="btn btn-outline btn-success px-5 mr-4 rounded-md">LogIn</button></Link>
+     </>
+    }
+    </div>
     <label htmlFor="dashboard-drawer" tabIndex={2} className="btn btn-ghost lg:hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -84,19 +97,6 @@ const Navbar = () => {
             />
           </svg>
         </label>
-    <div className="navbar-end">
-    {
-      user?.uid ?
-      <Link onClick={handleLogOut} ><button className="btn btn-outline btn-success px-5 rounded-md">LogOut</button></Link>
-
-      :
-
-     <>
-      <Link to='/login'><button className="btn btn-outline btn-success px-5 mr-4 rounded-md">LogIn</button></Link>
-      <Link to='/signup'><button className="btn btn-outline btn-success rounded-md">Sign Up</button></Link>
-     </>
-    }
-    </div>
   </div>
   );
 };
