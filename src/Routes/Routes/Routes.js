@@ -5,13 +5,15 @@ import AddProduct from "../../pages/Dashboard/AddProduct/AddProduct";
 import Dashboard from "../../pages/Dashboard/Dashboard";
 import MyOrders from "../../pages/Dashboard/MyOrders";
 import MyProducts from "../../pages/Dashboard/MyProducts/MyProducts";
-import Category from "../../pages/Home/Categories/Category";
 import PhonesCollection from "../../pages/Home/Categories/PhonesCollection";
 import Login from "../../pages/Login/Login";
 import Payment from "../../pages/Payment/Payment";
 import Register from "../../pages/Register/Register";
 import DisplayError from "../../pages/shared/DisplayError/DisplayError";
+import AdminRoute from "./AdminRoute/AdminRoute";
+import BuyerRoute from "./BuyerRoute/BuyerRoute";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import SellerRoute from "./SellerRoute/SellerRoute";
 
 const { createBrowserRouter } = require("react-router-dom");
 const { default: Main } = require("../../Layout/Main");
@@ -51,29 +53,33 @@ const {default:Home}  =require("../../pages/Home/Home/Home");
     },
     {
        path:'/dashboard',
-       element:<DashBoardLayout></DashBoardLayout>,
+       element:<PrivateRoute><DashBoardLayout></DashBoardLayout></PrivateRoute>,
        errorElement:<DisplayError></DisplayError>,
        children:[
-        {
-            path:'/dashboard',
-            element:<MyOrders></MyOrders>
-        },
-        {
+           {
+               path:'/dashboard',
+               element:<Dashboard></Dashboard>
+           },
+           {
+               path:'/dashboard/myorders',
+               element:<BuyerRoute><MyOrders></MyOrders></BuyerRoute>
+           },
+           {
             path:'/dashboard/payment/:id',
             loader:({params}) => fetch(`http://localhost:5000/bookings/${params.id}`),
             element:<Payment></Payment>
         },
         {
-            path:'/dashboard/adddoctor',
-            element:<AddProduct></AddProduct>
+            path:'/dashboard/addproduct',
+            element:<SellerRoute><AddProduct></AddProduct></SellerRoute>
         },
         {
             path:'/dashboard/myproducts',
-            element:<MyProducts></MyProducts>
+            element:<SellerRoute><MyProducts></MyProducts></SellerRoute>
         },
         {
             path:'/dashboard/allUsers',
-            element:<AllUser></AllUser>
+            element:<AdminRoute><AllUser></AllUser></AdminRoute>
         }
        ]
     }

@@ -1,9 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
+import { AuthContext } from '../../../Context/AuthProvider';
 import ConfirmModal from '../../shared/ConfirmModal/ConfirmModal';
 
 const MyProducts = () => {
+    const {user} = useContext(AuthContext)
     const [deletingProduct,setDeletingProduct] = useState(null)
     
 
@@ -12,7 +14,7 @@ const MyProducts = () => {
         queryFn:async()=>{
           
             try{
-                const res = await fetch('http://localhost:5000/products')
+                const res = await fetch(`http://localhost:5000/products?email=${user?.email}`)
                 const data = res.json()
                 return data
             }

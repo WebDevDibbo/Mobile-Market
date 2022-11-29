@@ -11,6 +11,7 @@ const AddProduct = () => {
   const navigate = useNavigate();
   const {register,handleSubmit,formState: { errors }, } = useForm("");
   const imageHostKey = process.env.REACT_APP_IMGBB_KEY;
+  const date = new Date();
 
    const {data : categories,isLoading} = useQuery({
     queryKey:['category'],
@@ -27,7 +28,8 @@ const AddProduct = () => {
     
     
    const handleAddProduct = (data) => {
-    const image = data.image[0];
+   
+     const image = data.image[0];
     const formData = new FormData();
     formData.append("image",image)
 
@@ -45,12 +47,15 @@ const AddProduct = () => {
           categoryName : data.category,
           OriginalPrice: data.purchase,
           ResalePrice : data.sale,
-          Used : data.year,
+          used : data.year,
           condition : data.condition,
           number:data.number,
           location:data.location,
           description:data.description,
           image:imgdata.data.url,
+          postDate: date ,
+          sellersEmail: user.email,
+          sellersName: user.displayName
 
         }
         console.log(product)
@@ -63,7 +68,7 @@ const AddProduct = () => {
         .then(data => {
           console.log(data)
           if(data.acknowledged){
-            toast.success(`${data.name} is added successfully`)
+            toast.success(`${product.name} is added successfully`)
             navigate('/dashboard/myproducts')
           }
         })
