@@ -1,4 +1,5 @@
 import DashBoardLayout from "../../Layout/DashBoardLayout";
+import AllUser from "../../pages/AllUsers/AllUser";
 import Blog from "../../pages/Blogs/Blog";
 import AddProduct from "../../pages/Dashboard/AddProduct/AddProduct";
 import Dashboard from "../../pages/Dashboard/Dashboard";
@@ -39,11 +40,6 @@ const {default:Home}  =require("../../pages/Home/Home/Home");
                 path:'/blog',
                 element:<Blog></Blog>
             },
-            // {
-            //     path:'/categories/:id',
-            //     loader:({params}) => fetch(`http://localhost:5000/categories/${params.id}`),
-            //     element:<Category></Category>
-            // },
             {
                 path:'/products/:name',
                 loader:({params} )=> fetch(`http://localhost:5000/products/${params.name}`),
@@ -74,6 +70,10 @@ const {default:Home}  =require("../../pages/Home/Home/Home");
         {
             path:'/dashboard/myproducts',
             element:<MyProducts></MyProducts>
+        },
+        {
+            path:'/dashboard/allUsers',
+            element:<AllUser></AllUser>
         }
        ]
     }

@@ -38,12 +38,31 @@ const Register = () => {
         displayName : name
       }
       updateUser(userInfo)
-      .then(res =>{
-        navigate('/')
+      .then(() =>{
+        saveuser(name,email,role);
+        
       })
       .catch(err => console.log(err))
     })
     .catch(err => console.error(err));
+
+    const saveuser = (name,email,role)=>{
+      const user = {name,email,role};
+      fetch('http://localhost:5000/users',{
+       method: 'POST',
+       headers:{'content-type' : 'application/json'},
+       body:JSON.stringify(user)
+      })
+      .then(res => res.json())
+      .then(data => {
+        console.log("saveuser",data)
+        navigate('/')
+      })
+    }
+
+
+
+
   }
     return (
         <div>

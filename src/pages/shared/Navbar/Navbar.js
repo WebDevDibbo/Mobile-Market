@@ -20,7 +20,7 @@ const Navbar = () => {
             <Link to="/blog">Blog</Link>
           </li>
           <li>
-            <Link to="/appointment">Categories</Link>
+            {/* <Link to="/appointment">Categories</Link> */}
           </li>
           {
             user?.uid ? 
