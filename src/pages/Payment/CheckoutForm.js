@@ -10,7 +10,7 @@ const CheckoutForm = ({booking}) => {
     
     const stripe = useStripe();
     const elements = useElements();
-    const {price,email,Buyers,_id} = booking;
+    const {price,email,Buyers,productId,_id} = booking;
 
     const [clientSecret, setClientSecret] = useState("");
 
@@ -76,7 +76,8 @@ const CheckoutForm = ({booking}) => {
             price,
             transactionId : paymentIntent.id,
             email,
-            bookingId : _id
+            bookingId : _id,
+            productId : productId
 
         }
         fetch('http://localhost:5000/payments',{
