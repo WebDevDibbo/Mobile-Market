@@ -44,7 +44,7 @@ const {default:Home}  =require("../../pages/Home/Home/Home");
             },
             {
                 path:'/products/:name',
-                loader:({params} )=> fetch(`http://localhost:5000/products/${params.name}`),
+                loader:({params} )=> fetch(`https://unused-products-server.vercel.app/products/${params.name}`),
                 element:<PrivateRoute><PhonesCollection></PhonesCollection></PrivateRoute>
 
             }
@@ -66,7 +66,7 @@ const {default:Home}  =require("../../pages/Home/Home/Home");
            },
            {
             path:'/dashboard/payment/:id',
-            loader:({params}) => fetch(`http://localhost:5000/bookings/${params.id}`),
+            loader:({params}) => fetch(`https://unused-products-server.vercel.app/bookings/${params.id}`),
             element:<Payment></Payment>
         },
         {

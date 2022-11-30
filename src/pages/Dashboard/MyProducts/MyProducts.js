@@ -14,7 +14,7 @@ const MyProducts = () => {
         queryFn:async()=>{
           
             try{
-                const res = await fetch(`http://localhost:5000/products?email=${user?.email}`)
+                const res = await fetch(`https://unused-products-server.vercel.app/products?email=${user?.email}`)
                 const data = res.json()
                 return data
             }
@@ -30,7 +30,7 @@ const MyProducts = () => {
      }
      const handleDeleteProduct = product => {
         console.log(product)
-        fetch(`http://localhost:5000/products/${product._id}`,{
+        fetch(`https://unused-products-server.vercel.app/products/${product._id}`,{
             method: 'DELETE',   
         })
         .then(res => res.json())
@@ -57,7 +57,6 @@ const MyProducts = () => {
         <th>Product</th>
         <th>Category</th>
         <th>Price</th>
-        {/* <th>Status</th> */}
         <th></th>
         <th></th>
       </tr>

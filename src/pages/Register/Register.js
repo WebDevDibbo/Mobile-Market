@@ -48,7 +48,7 @@ const Register = () => {
 
     const saveuser = (name,email,role)=>{
       const user = {name,email,role};
-      fetch('http://localhost:5000/users',{
+      fetch('https://unused-products-server.vercel.app/users',{
        method: 'POST',
        headers:{'content-type' : 'application/json'},
        body:JSON.stringify(user)
