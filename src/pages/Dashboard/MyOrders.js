@@ -17,7 +17,7 @@ const MyOrders = () => {
 
     return (
         <div>
-            <h2 className='text-4xl mb-10'>My Orders</h2>
+            <h2 className='text-4xl text-center mb-10'>My Orders</h2>
             <div className="overflow-x-auto">
   <table className="table table-zebra w-full">
     <thead>
@@ -38,9 +38,6 @@ const MyOrders = () => {
         <td>
           <div className="flex items-center space-x-3">
             <div className="avatar">
-              {/* <div className="mask mask-squircle w-12 h-12">
-                <img src="/tailwind-css-component-profile-2@56w.png" alt="Avatar Tailwind CSS Component" />
-              </div> */}
             </div>
             <div>
               <div className="font-bold">{booking.Buyers}</div>

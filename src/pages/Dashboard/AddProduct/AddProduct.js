@@ -47,7 +47,7 @@ const AddProduct = () => {
           categoryName : data.category,
           OriginalPrice: data.purchase,
           ResalePrice : data.sale,
-          used : data.year,
+          usedofyear : data.year,
           condition : data.condition,
           number:data.number,
           location:data.location,

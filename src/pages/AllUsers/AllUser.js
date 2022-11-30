@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
+import toast from 'react-hot-toast';
 
 const AllUser = () => {
 
@@ -20,16 +21,21 @@ const AllUser = () => {
       })
       .then(res => res.json())
       .then(data => {
-        console.log(data)
-        refetch();
+        if(data.acknowledged){
+          toast.success()
+          refetch();
+        }
         
       })
+    }
+    const handleDelete = id => {
+     
     }
 
 
     return (
         <div>
-            <h2 className='text-3xl mb-4'>All Users</h2>
+            <h2 className='text-3xl mb-10 text-center'>All Users</h2>
             <div className="overflow-x-auto">
   <table className="table w-full">
     <thead>
@@ -50,7 +56,7 @@ const AllUser = () => {
             <td>{user.email}</td>
             <td>{user.role}</td>
             <td>{user?.isVerify ? <span className='badge'>verified</span> :  <button onClick={()=>handleVerify(user.email)} className='btn btn-primary btn-sm'>Verify</button>}</td>
-            <td><button className='btn btn-xs btn-accent'>Delete</button></td>
+            <td><button onClick={()=>handleDelete(user._id)} className='btn btn-xs btn-accent'>Delete</button></td>
           </tr>)
       }
     </tbody>

@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaCheckCircle } from "react-icons/fa";
+import { AuthContext } from "../../Context/AuthProvider";
 
 const Mobiles = ({ phones, setService }) => {
+  const {user} = useContext(AuthContext)
   const {
     name,
     _id,
@@ -10,13 +12,15 @@ const Mobiles = ({ phones, setService }) => {
     location,
     ResalePrice,
     OriginalPrice,
-    used,
+    usedofyear,
     postDate,
     sellersName,
+    condition,
     description,
     number,
     isVerify,
   } = phones;
+  console.log(phones)
   return (
     <div>
       <div className="card card-compact w-96 mx-auto mb-10 shadow-xl rounded-lg border border-gray-300">
@@ -28,9 +32,11 @@ const Mobiles = ({ phones, setService }) => {
           <p>Location : {location}</p>
           <p>Original Price : {OriginalPrice}</p>
           <p>Resale Price : {ResalePrice}</p>
-          <p>Used : {used}</p>
+          <p>usedofyear : {usedofyear}</p>
           <p>Post Date : {postDate.slice(0, 10)}</p>
           <p>Number : {number}</p>
+          <p>Condition : {condition}</p>
+          <p>Email : {user?.email}</p>
           <p className="flex items-center gap-3">
             Seller's Name : {sellersName}{" "}
             {isVerify && (

@@ -28,7 +28,7 @@ const MyProducts = () => {
     const closeModal = () =>{
         setDeletingProduct(null)
      }
-     const handleDeleteDoctor = product => {
+     const handleDeleteProduct = product => {
         console.log(product)
         fetch(`http://localhost:5000/products/${product._id}`,{
             method: 'DELETE',   
@@ -45,13 +45,9 @@ const MyProducts = () => {
 
      }
 
-
-
-
-
     return (
         <div>
-            <h2 className='text-3xl mb-4'>My Products</h2>
+            <h2 className='text-3xl mb-10 text-center'>My Products</h2>
 
             <div className="overflow-x-auto">
   <table className="table w-full">
@@ -73,7 +69,7 @@ const MyProducts = () => {
             <td>{product.name}</td>
             <td>{product.categoryName}</td>
             <td>{product.ResalePrice}</td>
-            {/* <td></td> */}
+            
             <td>
                 
             <label onClick={()=>setDeletingProduct(product)} htmlFor="confirm-modal" className="btn btn-xs btn-error">Delete</label>
@@ -91,7 +87,7 @@ const MyProducts = () => {
             title={`Are you sure you want to delete`}
             message={`If you delete ${deletingProduct.name}. It cannot be undone.`}
             closeModal = {closeModal}
-            successAction = {handleDeleteDoctor}
+            successAction = {handleDeleteProduct}
             modalData = {deletingProduct}
             ></ConfirmModal>
            }
