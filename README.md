@@ -1,5 +1,7 @@
 #Website name : "Mobile Market" <br/>
 #livesite :"https://mobile-market-51c9e.web.app/" <br/>
+adminEmail: don@gmail.com <br/>
+adminPassword: don123  <br/>
 #Features 1.Single Page Application <br/>
 2.It has advertise options. <br/>
 3.It has blog Routes. <br/>
