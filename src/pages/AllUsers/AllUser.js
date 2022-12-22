@@ -32,14 +32,15 @@ const AllUser = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure you want to delete this?");
     if(proceed){
-      fetch(`http://localhost:5000/users/${id}}`, {
-      method: "DELETE",
+      fetch(`https://unused-products-server.vercel.app/users/${id}`, {
+      method: "DELETE"
     })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
         if (data.deletedCount > 0) {
           toast.success("deleted successfully");
+          refetch()
         }
       });
     }
