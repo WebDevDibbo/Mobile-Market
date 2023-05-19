@@ -3,6 +3,7 @@ import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../../Context/AuthProvider';
 import ConfirmModal from '../../shared/ConfirmModal/ConfirmModal';
+import Advertise from '../../Home/Advertise/Advertise';
 
 const MyProducts = () => {
     const {user} = useContext(AuthContext)
@@ -45,6 +46,14 @@ const MyProducts = () => {
 
      }
 
+     const handleAdvertise = (product) => {
+        console.log(product);
+        // <Advertise product = {product}></Advertise>
+        // refetch();
+        // toast.success(`${product.name} Advertised successfully`)
+
+     }
+
     return (
         <div>
             <h2 className='text-3xl mb-10 text-center'>My Products</h2>
@@ -74,7 +83,7 @@ const MyProducts = () => {
             <label onClick={()=>setDeletingProduct(product)} htmlFor="confirm-modal" className="btn btn-xs btn-error">Delete</label>
                 </td>
 
-            <td><button className='btn-xs btn btn-primary'>Advertise</button></td>
+            <td><button onClick={()=>handleAdvertise(product)} className='btn-xs btn btn-primary'>Advertise</button></td>
           </tr>)
       }
     

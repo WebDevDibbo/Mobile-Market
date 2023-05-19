@@ -5,7 +5,9 @@ import AddProduct from "../../pages/Dashboard/AddProduct/AddProduct";
 import Dashboard from "../../pages/Dashboard/Dashboard";
 import MyOrders from "../../pages/Dashboard/MyOrders";
 import MyProducts from "../../pages/Dashboard/MyProducts/MyProducts";
+import AllCategories from "../../pages/Home/Categories/AllCategories";
 import PhonesCollection from "../../pages/Home/Categories/PhonesCollection";
+import Contact from "../../pages/Home/Contact/Contact";
 import Login from "../../pages/Login/Login";
 import Payment from "../../pages/Payment/Payment";
 import Register from "../../pages/Register/Register";
@@ -40,7 +42,15 @@ const {default:Home}  =require("../../pages/Home/Home/Home");
             },
             {
                 path:'/blog',
-                element:<Blog></Blog>
+                element: <Blog></Blog>
+            },
+            {
+                path:'/contact',
+                element: <Contact></Contact>
+            },
+            {
+                path:'/allcategories',
+                element:<AllCategories></AllCategories>
             },
             {
                 path:'/products/:name',

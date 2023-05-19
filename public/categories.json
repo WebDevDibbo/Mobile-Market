@@ -1,1 +1,27 @@
+[
+    {
+        "name":"Apple",
+        "img":"https://i.ibb.co/2SZHmJG/Apple.jpg"
+    },
+    {
+        "name":"Samsung",
+        "img":"https://i.ibb.co/ZzKJkH5/Samsung.jpg"
+    },
+    {
+        "name":"Vivo",
+        "img":"https://i.ibb.co/h7Hx5tF/Vivo.jpg"
+    },
+    {
+        "name" : "OnePlus",
+        "img" : "https://i.ibb.co/Z6yzRdg/OnePlus.jpg"
+    },
+    {
+        "name" : "Symphony",
+        "img" : "https://i.ibb.co/f1XMqjh/Symphony.jpg"
+    },
+    {
+        "name" : "Realme",
+        "img" : "https://i.ibb.co/jTZDPyD/Realme.jpg"
+    }
+]
 

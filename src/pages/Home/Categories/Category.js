@@ -8,7 +8,7 @@ const Category = ({category}) => {
    
     return (
         
-           <div className="card w-96 mx-auto bg-base-100 shadow-xl rounded-lg border border-gray-300">
+           <div className="card w-80 mx-auto bg-base-100 shadow-xl rounded-lg border border-gray-300">
             <figure><img className='rounded-lg' src={img} alt="Shoes" /></figure>
             <div className="card-body">
               <h2 className="card-title">{name}</h2>

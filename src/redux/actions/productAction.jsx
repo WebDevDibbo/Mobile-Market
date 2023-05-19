@@ -1,11 +1,11 @@
-import { BOOK_NOW } from "../actionTypes/actionTypes";
+// import { BOOK_NOW } from "../actionTypes/actionTypes";
 
-export const productAction = (e) => {
-    return {
-      type: BOOK_NOW,
-      payload: {
-        name : e.target.name,
-        value: e.target.value,
-      },
-    };
-  };
+// export const productAction = (e) => {
+//     return {
+//       // type: BOOK_NOW,
+//       payload: {
+//         name : e.target.name,
+//         value: e.target.value,
+//       },
+//     };
+//   };

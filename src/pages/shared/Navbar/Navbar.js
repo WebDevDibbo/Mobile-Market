@@ -14,15 +14,21 @@ const Navbar = () => {
     const menuItems = (
         <React.Fragment>
           <li>
-            <Link to="/">Home</Link>
+            <Link className="font-semibold transition ease-linear  hover:text-[#FF5A63]" to="/">Home</Link>
           </li>
           <li>
-            <Link to="/blog">Blog</Link>
+            <Link className="font-semibold  transition ease-linear  hover:text-[#FF5A63]" to="/blog">Blog</Link>
+          </li>
+          <li>
+            <Link className="font-semibold  transition ease-linear  hover:text-[#FF5A63]" to="/allcategories">Categories</Link>
+          </li>
+          <li>
+            <Link className="font-semibold  transition ease-linear  hover:text-[#FF5A63]" to="/contact">Contact</Link>
           </li>
           {
             user?.uid ? 
             <li>
-            <Link to="/dashboard">Dashboard</Link>
+            <Link className="font-semibold  transition ease-linear  hover:text-[#FF5A63]" to="/dashboard">Dashboard</Link>
           </li>
           :
           <></>
@@ -32,7 +38,7 @@ const Navbar = () => {
       );
   return (
     // sticky top-0 z-10
-    <div className="navbar  bg-base-100 my-5">
+    <div className="navbar bg-base-100 sticky top-0 z-10 my-5">
     <div className="navbar-start">
       <div className="dropdown">
         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -58,9 +64,9 @@ const Navbar = () => {
           {menuItems}
         </ul>
       </div>
-      <Link to="/" className="btn btn-ghost normal-case text-xl">
-        Mobile Market
-      </Link>
+      {/* <Link to="/" className="btn font-bold btn-ghost normal-case text-2xl"> */}
+        <h2 className="normal-case text-2xl font-bold"><span className="text-[#FF5A63]">Star</span>Mobile</h2>
+      
     </div>
     <div className="navbar-center hidden lg:flex">
       <ul className="menu menu-horizontal">{menuItems}</ul>
@@ -69,12 +75,12 @@ const Navbar = () => {
     <div className="navbar-end">
     {
       user?.uid ?
-      <Link onClick={handleLogOut} ><button className="btn btn-outline btn-success px-5 rounded-md">LogOut</button></Link>
+      <Link onClick={handleLogOut} ><button className="font-semibold text-base transition ease-linear hover:text-[#FF5567] mr-4">Log Out</button></Link>
 
       :
 
      <>
-      <Link to='/login'><button className="btn btn-outline btn-success px-5 mr-4 rounded-md">LogIn</button></Link>
+      <Link to='/login'><button className="font-semibold text-base transition ease-linear hover:text-[#FF5567] mr-4">Log In</button></Link>
      </>
     }
     </div>

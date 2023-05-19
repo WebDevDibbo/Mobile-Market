@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
+import bggradient from '../../assets/bg-gradient.jpg'
 
 const SignUp = () => {
   const {createUser,updateUser,verifyEmail} = useContext(AuthContext);
@@ -72,15 +73,15 @@ const SignUp = () => {
 
   
   return (
-    <div className="h-[800px] flex justify-center items-center bg-gray-200">
-      <div className="w-96 px-7 rounded-lg shadow-2xl ">
-        <h2 className="text-xl text-center my-6">Sign Up</h2>
+    <div style={{backgroundImage : `url(${bggradient})`}} className="h-[700px]  flex justify-center items-start bg-gray-200">
+      <div className="w-96 px-7 bg-white mt-10 shadow-lg ">
+        <h2 className="text-xl font-semibold text-center my-6">Sign Up</h2>
         <form onSubmit={handleSubmit(handleSignUp)}>
           <div className="form-control w-full max-w-xs">
             <label className="label">
               <span className="label-text">Name</span>
             </label>
-            <input type="text"  {...register("name",{required:"name is required"})} className="input input-bordered" />
+            <input type="text"  {...register("name",{required:"name is required"})} className="p-2 border border-slate-400" />
             {errors.name && <p className="text-red-600">{errors.name.message}</p>}
 
           </div>
@@ -88,7 +89,7 @@ const SignUp = () => {
             <label className="label">
               <span className="label-text">Email</span>
             </label>
-            <input type="email" {...register("email",{required:true})} className="input input-bordered" />
+            <input type="email" {...register("email",{required:true})} className="p-2 border border-slate-400" />
             {errors.email && <p className="text-red-600">{errors.email.message}</p>}
 
           </div>
@@ -99,34 +100,29 @@ const SignUp = () => {
             <input type="password" {...register("password",{required:"Password is required",
         minLength:{value:6,message:"Password must be at least 6 characters"},
         pattern:{value:/(?=.*[0-9])/,message:'Password must be numbers'}
-        })} className="input input-bordered" />
+        })} className="p-2 border border-slate-400" />
             {errors.password && <p className="text-red-600">{errors.password.message}</p>}
           </div>
-          <select {...register("role",{required:"role is required"})}  className="select select-bordered mt-4 w-full max-w-xs">
+          <select {...register("role",{required:"role is required"})}  className="py-2 border border-black pl-2 mt-4 w-full max-w-xs">
               <option>Seller</option>
               <option>Buyer</option>
          </select>
 
           <input
             type="submit"
-            className="btn btn-active btn-success w-full text-white mt-5"
-            value="signup"
+            className="text-base cursor-pointer font-semibold py-2 bg-gradient-to-r from-sky-500 to-indigo-500 border-none w-full text-white mt-5"
+            value="Register"
           />
           <div>
             {signUpError && <p className="text-red-600">{signUpError}</p>}
           </div>
         </form>
-        <p className="my-4">
-          Already have an Account??{" "}
-          <Link to="/login" className="text-secondary">
-            Please Login
-          </Link>
-        </p>
+        
         <div className="text-center mb-4 divider">OR</div>
         <input
           type="submit"
-          className="btn btn-outline btn-info mb-6 w-full"
-          value="CONTINUE WITH GOOGLE"
+          className=" mb-6 font-semibold py-2 w-full cursor-pointer bg-gradient-to-r text-white border-none from-sky-500 to-purple-500"
+          value="Continue With Google "
         />
       </div>
     </div>

@@ -11,7 +11,7 @@ const PhonesCollection = () => {
         <section>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-8'>
         {
-            data.map(phone => <Mobiles key={phone._id}
+            data?.map(phone => <Mobiles key={phone._id}
                      phones = {phone}
                      setService = {setService}
             >   

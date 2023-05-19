@@ -1,86 +1,23 @@
 import React from 'react';
-import phone1 from '../../../assets/phone1.jpg'
-import phone2 from '../../../assets/phone2.jpg'
-import phone3 from '../../../assets/phone3.jpg'
-import phone4 from '../../../assets/phone4.jpg'
+import Lottie from "lottie-react";
+import Mobile from '../../../Mobile.json'
+import './Banner.css'
+import { Link } from 'react-router-dom';
+
 
 const Banner = () => {
     return (
+        <div className='flex md:flex-row flex-col justify-around items-center mb-24 mt-5'>
         <div>
-        <div className="carousel w-full mb-32">
-          <div id="slide1" className="carousel-item relative w-full">
-            <div className="slider-img">
-              <img src={phone1} className="w-full banner rounded-lg" alt="" />
-            </div>
-            <div className="absolute flex justify-center transform -translate-y-1/2 left-5 right-5 top-1/2">
-              <h1 className="md:text-3xl lg:text-4xl font-bold text-white ">
-              </h1>
-            </div>
-            <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-              <a href="#slide4" className="btn btn-circle">
-                ❮
-              </a>
-              <a href="#slide2" className="btn btn-circle">
-                ❯
-              </a>
-            </div>
-          </div>
-          <div id="slide2" className="carousel-item relative w-full">
-            <div className="slider-img">
-              <img src={phone2} className="w-full banner rounded-lg" alt="" />
-            </div>
-            <div className="absolute flex justify-center transform -translate-y-1/2 left-5 right-5 top-1/2">
-              <h1 className="md:text-3xl lg:text-4xl  font-bold text-white ">
-               
-              </h1>
-            </div>
-            <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-              <a href="#slide1" className="btn btn-circle">
-                ❮
-              </a>
-              <a href="#slide3" className="btn btn-circle">
-                ❯
-              </a>
-            </div>
-          </div>
-          <div id="slide3" className="carousel-item relative w-full">
-            <div className="slider-img">
-              <img src={phone3} className="w-full banner rounded-lg" alt="" />
-            </div>
-            <div className="absolute flex justify-center transform -translate-y-1/2 left-5 right-5 top-1/2">
-              <h1 className="md:text-3xl lg:text-4xl font-bold text-white ">
-                
-              </h1>
-            </div>
-            <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-              <a href="#slide2" className="btn btn-circle">
-                ❮
-              </a>
-              <a href="#slide4" className="btn btn-circle">
-                ❯
-              </a>
-            </div>
-          </div>
-          <div id="slide4" className="carousel-item relative w-full">
-            <div className="slider-img">
-              <img src={phone4} className="w-full banner rounded-lg" alt="" />
-            </div>
-            <div className="absolute flex justify-center transform -translate-y-1/2 left-5 right-5 top-1/2">
-              <h1 className="md:text-3xl lg:text-4xl font-bold text-white ">
-                
-              </h1>
-            </div>
-            <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-              <a href="#slide3" className="btn btn-circle">
-                ❮
-              </a>
-              <a href="#slide1" className="btn btn-circle">
-                ❯
-              </a>
-            </div>
-          </div>
+          <h1 className='md:text-6xl text-3xl mb-8 text-black max-w-lg font-semibold'>A New <span className='text-[#FF5567]'>Online Shop</span> experience</h1>
+          <p className='text-slate-500 font-medium max-w-lg text-xl'>Here you can sell your old products and also buy others used products</p>
+          <button className='mt-6'><Link to='/allcategories' className='shop-btn font-semibold'>Shop Now</Link></button>
         </div>
-      </div>
+        <div className="w-full  lg:w-1/3 ">
+        <Lottie classID="md:w-1/3" animationData={Mobile} loop={true} />
+        </div>
+        
+        </div>
     );
 };
 

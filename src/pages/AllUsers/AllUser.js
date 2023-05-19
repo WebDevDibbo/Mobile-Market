@@ -15,19 +15,25 @@ const AllUser = () => {
   });
 
   const handleVerify = (email) => {
-    fetch(
-      `https://unused-products-server.vercel.app/user/verify?email=${email}`,
-      {
-        method: "PUT",
-      }
-    )
+    const verify = window.confirm("Are you sure you want to verify this user?");
+    if(verify){
+
+      fetch(
+        `https://unused-products-server.vercel.app/user/verify?email=${email}`,
+        {
+          method: "PUT",
+        }
+      )
+    
+    
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {
-          toast.success();
+          toast.success('user verified');
           refetch();
         }
       });
+    }
   };
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure you want to delete this?");

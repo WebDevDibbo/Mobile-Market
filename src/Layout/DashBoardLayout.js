@@ -9,10 +9,13 @@ import Loading from '../pages/shared/Loading/Loading';
 import Navbar from '../pages/shared/Navbar/Navbar';
 
 const DashBoardLayout = () => {
-  const {user}  = useContext(AuthContext)
+  const {user,loading}  = useContext(AuthContext)
   const [isAdmin]  = useAdmin(user?.email) ;
   const [isSeller]  = useSeller(user?.email) ;
   const [isBuyer]  = useBuyer(user?.email) ;
+  if(loading){
+    return <Loading></Loading>
+  }
  
     return (
         <div>
